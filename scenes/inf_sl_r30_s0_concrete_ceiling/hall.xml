@@ -1,0 +1,142 @@
+<scene version="2.1.0">
+	<integrator type="path"><integer name="max_depth" value="12" /></integrator>
+	<bsdf type="diffuse" id="mat-itu_concrete" name="mat-itu_concrete"><rgb value="0.6 0.6 0.6" name="reflectance" /></bsdf>
+	<bsdf type="diffuse" id="mat-itu_metal" name="mat-itu_metal"><rgb value="0.6 0.6 0.6" name="reflectance" /></bsdf>
+	<emitter type="constant" id="World" name="World"><rgb value="1.000000 1.000000 1.000000" name="radiance" /></emitter>
+	<shape type="ply" id="mesh-floor" name="mesh-floor">
+		<string name="filename" value="meshes/floor-itu_concrete.ply" />
+		<ref id="mat-itu_concrete" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-ceiling" name="mesh-ceiling">
+		<string name="filename" value="meshes/ceiling-itu_concrete.ply" />
+		<ref id="mat-itu_concrete" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-wall_south_lower" name="mesh-wall_south_lower">
+		<string name="filename" value="meshes/wall_south_lower-itu_concrete.ply" />
+		<ref id="mat-itu_concrete" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-wall_south_window" name="mesh-wall_south_window">
+		<string name="filename" value="meshes/wall_south_window-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-wall_south_upper" name="mesh-wall_south_upper">
+		<string name="filename" value="meshes/wall_south_upper-itu_concrete.ply" />
+		<ref id="mat-itu_concrete" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-wall_east_full" name="mesh-wall_east_full">
+		<string name="filename" value="meshes/wall_east_full-itu_concrete.ply" />
+		<ref id="mat-itu_concrete" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-wall_north_lower" name="mesh-wall_north_lower">
+		<string name="filename" value="meshes/wall_north_lower-itu_concrete.ply" />
+		<ref id="mat-itu_concrete" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-wall_north_window" name="mesh-wall_north_window">
+		<string name="filename" value="meshes/wall_north_window-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-wall_north_upper" name="mesh-wall_north_upper">
+		<string name="filename" value="meshes/wall_north_upper-itu_concrete.ply" />
+		<ref id="mat-itu_concrete" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-wall_west_full" name="mesh-wall_west_full">
+		<string name="filename" value="meshes/wall_west_full-itu_concrete.ply" />
+		<ref id="mat-itu_concrete" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_00_box" name="mesh-clutter_00_box">
+		<string name="filename" value="meshes/clutter_00_box-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_01_box" name="mesh-clutter_01_box">
+		<string name="filename" value="meshes/clutter_01_box-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_02_box" name="mesh-clutter_02_box">
+		<string name="filename" value="meshes/clutter_02_box-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_03_box" name="mesh-clutter_03_box">
+		<string name="filename" value="meshes/clutter_03_box-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_04_box" name="mesh-clutter_04_box">
+		<string name="filename" value="meshes/clutter_04_box-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_05_box" name="mesh-clutter_05_box">
+		<string name="filename" value="meshes/clutter_05_box-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_06_box" name="mesh-clutter_06_box">
+		<string name="filename" value="meshes/clutter_06_box-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_07_box" name="mesh-clutter_07_box">
+		<string name="filename" value="meshes/clutter_07_box-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_08_box" name="mesh-clutter_08_box">
+		<string name="filename" value="meshes/clutter_08_box-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_09_cyl" name="mesh-clutter_09_cyl">
+		<string name="filename" value="meshes/clutter_09_cyl-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_10_cyl" name="mesh-clutter_10_cyl">
+		<string name="filename" value="meshes/clutter_10_cyl-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_11_cyl" name="mesh-clutter_11_cyl">
+		<string name="filename" value="meshes/clutter_11_cyl-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_12_cyl" name="mesh-clutter_12_cyl">
+		<string name="filename" value="meshes/clutter_12_cyl-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_13_cyl" name="mesh-clutter_13_cyl">
+		<string name="filename" value="meshes/clutter_13_cyl-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_14_cyl" name="mesh-clutter_14_cyl">
+		<string name="filename" value="meshes/clutter_14_cyl-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_15_cyl" name="mesh-clutter_15_cyl">
+		<string name="filename" value="meshes/clutter_15_cyl-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_16_cyl" name="mesh-clutter_16_cyl">
+		<string name="filename" value="meshes/clutter_16_cyl-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_17_cyl" name="mesh-clutter_17_cyl">
+		<string name="filename" value="meshes/clutter_17_cyl-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_18_cyl" name="mesh-clutter_18_cyl">
+		<string name="filename" value="meshes/clutter_18_cyl-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_19_cyl" name="mesh-clutter_19_cyl">
+		<string name="filename" value="meshes/clutter_19_cyl-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_20_cyl" name="mesh-clutter_20_cyl">
+		<string name="filename" value="meshes/clutter_20_cyl-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_21_cyl" name="mesh-clutter_21_cyl">
+		<string name="filename" value="meshes/clutter_21_cyl-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_22_cyl" name="mesh-clutter_22_cyl">
+		<string name="filename" value="meshes/clutter_22_cyl-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+	<shape type="ply" id="mesh-clutter_23_cyl" name="mesh-clutter_23_cyl">
+		<string name="filename" value="meshes/clutter_23_cyl-itu_metal.ply" />
+		<ref id="mat-itu_metal" name="bsdf" />
+	</shape>
+</scene>
