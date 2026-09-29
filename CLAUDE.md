@@ -31,6 +31,22 @@ study. The synthesis and its validation happen on the original machine, not here
 - `scripts/check_env.py`, `run_grid.sh`, `status.sh`, `stop_grid.sh`.
 
 ## Steps
+0. **Resource check — before installing or running anything.** Show the user the output of:
+   ```bash
+   df -h . /tmp; free -g; nproc; uptime
+   nvidia-smi; nvidia-smi --query-compute-apps=pid,process_name,used_memory --format=csv
+   ps -eo pid,user,pcpu,pmem,etime,comm --sort=-pcpu | head -15; who
+   ```
+   **Stop and flag the human (do not continue) if any of these holds:**
+   - free disk on the repo's filesystem < 30 GB (tiles grow to ~12 GB, the venv needs a few GB, plus margin),
+     or `/tmp` < 5 GB;
+   - free RAM < 16 GB;
+   - the GPU is already busy: another process uses > 20% utilisation or > 10 GB GPU memory, or any compute
+     process from another user (the machine may be shared — do not take a GPU someone else is using);
+   - load average above half the core count, or another user's heavy job in the `ps` list;
+   - `nvidia-smi` fails, shows no GPU, or reports errors/ECC problems.
+   If everything is clear, say so with the numbers and continue. Re-check disk and GPU memory with
+   `./status.sh` during the run; if free disk falls below 10 GB, stop the workers (`./stop_grid.sh`) and flag it.
 1. **Environment** (Python 3.10–3.13; Mitsuba/Dr.Jit/Sionna publish aarch64 wheels for these pins):
    ```bash
    python3 -m venv .venv && .venv/bin/pip install -U pip && .venv/bin/pip install -r requirements.txt

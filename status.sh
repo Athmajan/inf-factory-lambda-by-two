@@ -15,3 +15,6 @@ echo "workers running: $(pgrep -fc 'scripts/run_cir_grid\.py' || true)"
 for f in logs/cir_grid_w*.log; do [ -f "$f" ] && echo "$f: $(tail -1 "$f")"; done
 nvidia-smi --query-gpu=utilization.gpu,memory.used,memory.total --format=csv,noheader 2>/dev/null
 du -sh results/cir_grid_lam2/tiles 2>/dev/null
+avail_gb=$(df -BG --output=avail . | tail -1 | tr -dc '0-9')
+echo "free disk: ${avail_gb} GB"
+[ "${avail_gb:-0}" -lt 10 ] && echo "WARNING: less than 10 GB free disk - stop the workers (./stop_grid.sh) and flag the human"
